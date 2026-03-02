@@ -1,0 +1,43 @@
+LEETCODE 682 – BASEBALL GAME 
+
+Concept:
+We simulate the game using an ArrayList<Integer> to store valid scores.
+
+ArrayList<Integer> k = new ArrayList<>();
+
+Operations:
+
+1) If operation is a number:
+   Convert String to int and add to list.
+   k.add(Integer.parseInt(i));
+
+2) If operation is "+":
+   Add sum of last two scores.
+   k.add(k.get(k.size()-1) + k.get(k.size()-2));
+
+3) If operation is "D":
+   Add double of last score.
+   k.add(k.get(k.size()-1) * 2);
+
+4) If operation is "C":
+   Remove last valid score.
+   k.remove(k.size()-1);
+
+Final Step:
+Return total sum of all elements in list.
+
+int sum = 0;
+for(int num : k){
+    sum += num;
+}
+return sum;
+
+Important Concepts Used:
+- String comparison using equals()
+- Integer.parseInt() for conversion
+- ArrayList get() and remove()
+- Simulation technique
+- Stack-like behavior
+
+Key Idea:
+We are always working with the LAST elements of the list.
