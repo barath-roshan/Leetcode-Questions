@@ -1,0 +1,43 @@
+Problem Description
+
+Given a sorted array nums and an integer target, find the starting and ending position of the target in the array.
+
+If target is not found, return [-1, -1].
+
+The array may contain duplicates.
+
+Goal: Use O(log n) time (binary search).
+
+Example:
+
+nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+
+Core Logic
+
+Binary Search Concept:
+
+Use the fact that the array is sorted to search efficiently.
+
+Modify binary search to find first and last occurrence separately.
+
+Finding First Occurrence:
+
+When nums[mid] == target, store mid as first.
+
+Continue searching left half (high = mid - 1) to check if an earlier occurrence exists.
+
+Finding Last Occurrence:
+
+When nums[mid] == target, store mid as last.
+
+Continue searching right half (low = mid + 1) to check if a later occurrence exists.
+
+Return Result:
+
+After two searches, return [first, last].
+
+If target is absent, both remain -1.
+
+
+SOLVED ON 24-09-2025
