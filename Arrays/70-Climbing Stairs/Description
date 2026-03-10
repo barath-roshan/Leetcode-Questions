@@ -1,0 +1,28 @@
+Problem:
+You are climbing a staircase with n steps.
+Each time you can climb either 1 step or 2 steps.
+Find the total number of distinct ways to reach the top.
+
+Key Idea:
+To reach step n, the last move must be:
+1 step from (n-1)
+or
+2 steps from (n-2)
+
+So the recurrence relation is:
+
+ways(n) = ways(n-1) + ways(n-2)
+
+Base Cases:
+ways(1) = 1
+ways(2) = 2
+
+This follows the Fibonacci pattern.
+
+Optimized Approach:
+Instead of recursion, keep track of the last two values and compute the next one iteratively.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Solved on 10/03/2026
