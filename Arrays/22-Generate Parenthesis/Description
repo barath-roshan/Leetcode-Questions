@@ -1,0 +1,57 @@
+LeetCode 22 – Generate Parentheses
+
+Problem:
+Given an integer n, generate all combinations of well-formed parentheses consisting of n pairs of parentheses.
+
+Example:
+Input: n = 3
+Output:
+((()))
+(()())
+(())()
+()(())
+()()()
+
+Concept:
+Use recursion and backtracking to build the parentheses string step by step.
+
+We keep track of:
+open  → number of '(' used
+close → number of ')' used
+
+Rules:
+1. We can add '(' if open < n
+   (because we cannot exceed n opening brackets)
+
+2. We can add ')' if close < open
+   (because we cannot close more brackets than we opened)
+
+Base Condition:
+If the length of the current string becomes 2*n,
+it means we used all parentheses and formed a valid string.
+So we add it to the result list.
+
+Backtracking Idea:
+At every step we try possible choices and explore them recursively.
+
+add "("  if open < n
+add ")"  if close < open
+stop     when length == 2*n
+
+This ensures that only valid parentheses combinations are generated.
+
+Time Complexity:
+The number of valid combinations follows Catalan numbers.
+
+n = 1 → 1
+n = 2 → 2
+n = 3 → 5
+n = 4 → 14
+n = 5 → 42
+
+Approximate complexity: O(4^n / √n)
+
+One-line Summary:
+Generate parentheses using backtracking, add '(' when open < n and ')' when close < open, and store the string when its length becomes 2*n.
+
+Solved on 10/03/2026
